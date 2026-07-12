@@ -1,0 +1,21 @@
+{
+  "type": "acidic:erlenmeyer_flask",
+  "condenserApparatus": "true",
+  "heatRequirement": "150",
+  "ingredients": [
+    {
+      "item": "acidic:sodium_chloride",
+      "count": 5
+    },
+    {
+      "fluid": "acidic:sulfuric_acid_source",
+      "amount": 50
+    }
+  ],
+  "results": [
+    {
+      "fluid": "acidic:hydrochloric_acid_source",
+      "amount": 50
+    }
+  ]
+}

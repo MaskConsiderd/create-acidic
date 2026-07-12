@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "lit=false": { "model": "acidic:block/bunsen_burner" },
+    "lit=true": { "model": "acidic:block/bunsen_burner" }
+  }
+}

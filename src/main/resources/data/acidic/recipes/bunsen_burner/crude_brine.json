@@ -1,0 +1,19 @@
+{
+  "type": "acidic:bunsen_burner",
+  "heatRequirement": 50,
+  "processingTime": 200,
+  "requiresErlenmeyerFlask": false,
+  "ingredients": [
+    {
+      "item": "minecraft:potion",
+      "nbt": {
+        "Potion": "minecraft:water"
+      },
+      "count": 1
+    }
+  ],
+  "results": [
+    { "item": "acidic:crude_brine", "count": 1 },
+    { "item": "minecraft:glass_bottle", "count": 1 }
+  ]
+}

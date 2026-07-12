@@ -1,0 +1,13 @@
+{
+  "chemical_fizzing": {
+    "category": "block",
+    "subtitle": "subtitle.acidic.chemical_fizzing",
+    "sounds": [
+      {
+        "type": "file",
+        "name": "acidic:chemical_fizzing",
+        "stream": true
+      }
+    ]
+  }
+}

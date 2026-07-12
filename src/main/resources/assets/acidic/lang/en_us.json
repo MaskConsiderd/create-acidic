@@ -1,0 +1,26 @@
+{
+  "itemGroup.acidic.acidic_tab": "Create: Acidic",
+  "creativetab.acidic.acidic_tab": "Create: Acidic",
+
+  "block.acidic.bunsen_burner": "Bunsen Burner",
+  "block.acidic.erlenmeyer_flask": "Erlenmeyer Flask",
+  "block.acidic.condenser_apparatus": "Condenser Apparatus",
+
+  "block.acidic.sulfuric_acid_block": "Sulfuric Acid",
+  "block.acidic.hydrochloric_acid_block": "Hydrochloric Acid",
+
+  "item.acidic.salt": "Salt",
+  "item.acidic.sodium_chloride": "Sodium Chloride",
+  "item.acidic.crude_brine": "Crude Brine",
+  "item.acidic.purified_brine": "Purified Brine",
+  "item.acidic.glass_vial": "Glass Vial",
+  "item.acidic.vial_of_hydrochloric_acid": "Vial of Hydrochloric Acid",
+  "item.acidic.vial_of_sulfuric_acid": "Vial of Sulfuric Acid",
+  "item.acidic.science_goggles": "Science Goggles",
+  "item.acidic.lab_coat": "Lab Coat",
+  "item.acidic.bucket_of_sulfuric_acid": "Bucket of Sulfuric Acid",
+  "item.acidic.bucket_of_hydrochloric_acid": "Bucket of Hydrochloric Acid",
+
+  "fluid_type.acidic.sulfuric_acid": "Sulfuric Acid",
+  "fluid_type.acidic.hydrochloric_acid": "Hydrochloric Acid"
+}

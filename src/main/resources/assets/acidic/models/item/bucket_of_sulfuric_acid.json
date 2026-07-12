@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "acidic:item/bucket_of_sulfuric_acid"
+  }
+}
