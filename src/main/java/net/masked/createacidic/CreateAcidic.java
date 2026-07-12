@@ -129,6 +129,14 @@ public class CreateAcidic
         }
 
         @SubscribeEvent
+        public static void registerGuiOverlays(net.minecraftforge.client.event.RegisterGuiOverlaysEvent event) {
+            event.registerAbove(
+                    net.minecraftforge.client.gui.overlay.VanillaGuiOverlay.HOTBAR.id(),
+                    "science_goggle_info",
+                    net.masked.createacidic.client.overlay.ScienceGogglesOverlayRenderer.OVERLAY);
+        }
+
+        @SubscribeEvent
         public static void onRegisterRenderers(net.minecraftforge.client.event.EntityRenderersEvent.RegisterRenderers event)
         {
             event.registerBlockEntityRenderer(

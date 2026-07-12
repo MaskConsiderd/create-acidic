@@ -19,11 +19,13 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.Nullable;
+import net.masked.createacidic.api.IHaveScienceGoggleInformation;
+import net.minecraft.ChatFormatting;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class BunsenBurnerBlockEntity extends BlockEntity implements MenuProvider {
+public class BunsenBurnerBlockEntity extends BlockEntity implements MenuProvider, IHaveScienceGoggleInformation {
 
     public static final float MAX_TEMP = 150f;
     public static final float TEMP_STEP_PER_CLICK = 25f;
@@ -265,6 +267,36 @@ public class BunsenBurnerBlockEntity extends BlockEntity implements MenuProvider
 
     public boolean isAtReactionTemp() {
         return currentTemp >= MAX_TEMP;
+    }
+
+    @Override
+    public boolean addToScienceGoggleTooltip(List<Component> tooltip, boolean isSneaking) {
+        tooltip.add(Component.literal("Bunsen Burner")
+                .withStyle(ChatFormatting.WHITE, ChatFormatting.BOLD));
+
+        if (!lit) {
+            tooltip.add(Component.literal("Unlit").withStyle(ChatFormatting.DARK_GRAY));
+            return true;
+        }
+
+        tooltip.add(Component.literal("Temperature: ")
+                .withStyle(ChatFormatting.GRAY)
+                .append(Component.literal(String.format("%.0f°C", currentTemp))
+                        .withStyle(ChatFormatting.GOLD)));
+
+        if (Math.abs(currentTemp - targetTemp) > 0.5f) {
+            tooltip.add(Component.literal("Target: ")
+                    .withStyle(ChatFormatting.GRAY)
+                    .append(Component.literal(String.format("%.0f°C", targetTemp))
+                            .withStyle(ChatFormatting.AQUA)));
+        }
+
+        tooltip.add(Component.literal("Fuel: ")
+                .withStyle(ChatFormatting.GRAY)
+                .append(Component.literal(getFuelPoints() + " pts")
+                        .withStyle(ChatFormatting.YELLOW)));
+
+        return true;
     }
 
     @Override

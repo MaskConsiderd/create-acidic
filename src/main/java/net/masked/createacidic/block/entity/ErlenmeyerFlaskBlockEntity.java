@@ -26,11 +26,15 @@ import net.minecraftforge.fluids.capability.IFluidHandler;
 import net.minecraftforge.fluids.capability.templates.FluidTank;
 import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.network.PacketDistributor;
+import net.masked.createacidic.api.IHaveScienceGoggleInformation;
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.Component;
 
+import java.util.List;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
-public class ErlenmeyerFlaskBlockEntity extends BlockEntity {
+public class ErlenmeyerFlaskBlockEntity extends BlockEntity implements IHaveScienceGoggleInformation {
 
     public static final int REQUIRED_SODIUM_CHLORIDE = 5;
     public static final int REQUIRED_SULFURIC_ACID_MB = 50;
@@ -303,6 +307,33 @@ public class ErlenmeyerFlaskBlockEntity extends BlockEntity {
 
     public float getReactionPercent() {
         return (float) reactionProgress / REACTION_TIME_TICKS;
+    }
+
+    @Override
+    public boolean addToScienceGoggleTooltip(List<Component> tooltip, boolean isSneaking) {
+        tooltip.add(Component.literal("Erlenmeyer Flask")
+                .withStyle(ChatFormatting.WHITE, ChatFormatting.BOLD));
+
+        if (!reacting) {
+            tooltip.add(Component.literal("Idle").withStyle(ChatFormatting.DARK_GRAY));
+            return true;
+        }
+
+        int ticksLeft = Math.max(0, REACTION_TIME_TICKS - reactionProgress);
+        int seconds = ticksLeft / 20;
+
+        tooltip.add(Component.literal("Reacting: ")
+                .withStyle(ChatFormatting.GRAY)
+                .append(Component.literal(seconds + "s remaining")
+                        .withStyle(ChatFormatting.AQUA)));
+
+        int percent = (int) (getReactionPercent() * 100f);
+        tooltip.add(Component.literal("Progress: ")
+                .withStyle(ChatFormatting.GRAY)
+                .append(Component.literal(percent + "%")
+                        .withStyle(ChatFormatting.GREEN)));
+
+        return true;
     }
 
     @Override
