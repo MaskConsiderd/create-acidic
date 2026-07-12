@@ -115,15 +115,15 @@ public class CreateAcidic
                 net.minecraft.client.gui.screens.MenuScreens.register(
                         net.masked.createacidic.registry.ModMenuTypes.BUNSEN_BURNER_MENU.get(),
                         net.masked.createacidic.client.screen.BunsenBurnerScreen::new);
-
-                net.masked.createacidic.client.model.LabCoatSleeveModel.bake(
-                        net.minecraft.client.Minecraft.getInstance().getEntityModels().bakeLayer(LAB_COAT_SLEEVE_LAYER));
             });
         }
 
         @SubscribeEvent
         @SuppressWarnings("unchecked")
         public static void onAddLayers(net.minecraftforge.client.event.EntityRenderersEvent.AddLayers event) {
+            net.masked.createacidic.client.model.LabCoatSleeveModel.bake(
+                    event.getEntityModels().bakeLayer(LAB_COAT_SLEEVE_LAYER));
+
             for (String skinName : event.getSkins()) {
                 var renderer = event.getSkin(skinName);
                 if (renderer == null) continue;
