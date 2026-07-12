@@ -10,6 +10,7 @@ import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.PartDefinition;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.world.entity.HumanoidArm;
+import net.minecraft.client.model.geom.builders.CubeDeformation;
 
 public class LabCoatSleeveModel {
 
@@ -25,13 +26,13 @@ public class LabCoatSleeveModel {
         root.addOrReplaceChild("right_sleeve",
                 CubeListBuilder.create()
                         .texOffs(0, 0)
-                        .addBox(-1.0F, -2.0F, -2.0F, 4.0F, 12.0F, 4.0F, 0.35F),
+                        .addBox(-1.0F, -2.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.35F)),
                 PartPose.ZERO);
 
         root.addOrReplaceChild("left_sleeve",
                 CubeListBuilder.create()
                         .texOffs(0, 16)
-                        .addBox(-3.0F, -2.0F, -2.0F, 4.0F, 12.0F, 4.0F, 0.35F),
+                        .addBox(-3.0F, -2.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.35F)),
                 PartPose.ZERO);
 
         return LayerDefinition.create(mesh, 64, 32);
