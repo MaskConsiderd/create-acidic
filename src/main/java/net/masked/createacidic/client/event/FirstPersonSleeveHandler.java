@@ -27,7 +27,12 @@ public class FirstPersonSleeveHandler {
         VertexConsumer buffer = event.getMultiBufferSource()
                 .getBuffer(RenderType.entityCutoutNoCull(SLEEVE_TEXTURE));
 
+        event.getPoseStack().pushPose();
+        event.getPoseStack().translate(0.0, -6.0 / 16.0, 0.0); // tune this value empirically
+
         LabCoatSleeveModel.render(event.getPoseStack(), buffer, event.getPackedLight(), event.getArm());
+
+        event.getPoseStack().popPose();
 
         // Not cancelling the event: vanilla still renders the bare arm/hand+item
         // underneath, we're just layering the sleeve cuboid on top of it.
