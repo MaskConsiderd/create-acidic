@@ -81,6 +81,10 @@ public class CreateAcidic
     @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents
     {
+        public static final net.minecraft.client.model.geom.ModelLayerLocation LAB_COAT_SLEEVE_LAYER =
+                new net.minecraft.client.model.geom.ModelLayerLocation(
+                        new net.minecraft.resources.ResourceLocation(MODID, "lab_coat_sleeve"), "main");
+
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
@@ -111,6 +115,9 @@ public class CreateAcidic
                 net.minecraft.client.gui.screens.MenuScreens.register(
                         net.masked.createacidic.registry.ModMenuTypes.BUNSEN_BURNER_MENU.get(),
                         net.masked.createacidic.client.screen.BunsenBurnerScreen::new);
+
+                net.masked.createacidic.client.model.LabCoatSleeveModel.bake(
+                        net.minecraft.client.Minecraft.getInstance().getEntityModels().bakeLayer(LAB_COAT_SLEEVE_LAYER));
             });
         }
 
@@ -145,6 +152,11 @@ public class CreateAcidic
             event.registerBlockEntityRenderer(
                     net.masked.createacidic.registry.ModBlockEntities.BUNSEN_BURNER_BE.get(),
                     net.masked.createacidic.client.renderer.BunsenBurnerRenderer::new);
+        }
+
+        @SubscribeEvent
+        public static void onRegisterLayerDefinitions(net.minecraftforge.client.event.EntityRenderersEvent.RegisterLayerDefinitions event) {
+            event.registerLayerDefinition(LAB_COAT_SLEEVE_LAYER, net.masked.createacidic.client.model.LabCoatSleeveModel::createLayer);
         }
     }
 }
