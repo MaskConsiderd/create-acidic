@@ -5,6 +5,15 @@
     {
       "element": {
         "element_type": "minecraft:single_pool_element",
+        "location": "acidic:sulfur_spring_1",
+        "processors": "minecraft:empty",
+        "projection": "rigid"
+      },
+      "weight": 1
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
         "location": "acidic:sulfur_spring_2",
         "processors": "minecraft:empty",
         "projection": "rigid"
