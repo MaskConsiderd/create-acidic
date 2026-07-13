@@ -6,6 +6,7 @@ import net.masked.createacidic.client.model.LabCoatSleeveModel;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.HumanoidArm;
 
 import net.minecraftforge.client.event.RenderArmEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -27,8 +28,14 @@ public class FirstPersonSleeveHandler {
         VertexConsumer buffer = event.getMultiBufferSource()
                 .getBuffer(RenderType.entityCutoutNoCull(SLEEVE_TEXTURE));
 
+        boolean isRightArm = event.getArm() == HumanoidArm.RIGHT;
+
+        double xOffset = isRightArm ? -7.5 / 16.0 : 7.5 / 16.0;
+        double yOffset = isRightArm ? 2.0 / 16.0 : 3.0 / 16.0; // tune this for left arm
+        double zOffset = 0.0 / 16.0;
+
         event.getPoseStack().pushPose();
-        event.getPoseStack().translate(-7.5 / 16.0, 2.0 / 16.0, 0.0 / 16.0); // tune this value empirically
+        event.getPoseStack().translate(xOffset, yOffset, zOffset);
 
         LabCoatSleeveModel.render(event.getPoseStack(), buffer, event.getPackedLight(), event.getArm());
 
