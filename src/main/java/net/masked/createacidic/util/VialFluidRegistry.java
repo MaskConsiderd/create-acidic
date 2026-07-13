@@ -19,7 +19,7 @@ public class VialFluidRegistry {
     private static final Map<java.util.function.Supplier<Fluid>, java.util.function.Supplier<Item>> FLUID_TO_VIAL = new HashMap<>();
 
     static {
-        register(ModItems.VIAL_OF_SULFURIC_ACID, ModFluids.SULFURIC_ACID_SOURCE);
+        register(ModItems.VIAL_OF_CONCENTRATED_SULFURIC_ACID, ModFluids.SULFURIC_ACID_SOURCE);
         register(ModItems.VIAL_OF_HYDROCHLORIC_ACID, ModFluids.HYDROCHLORIC_ACID_SOURCE);
     }
 

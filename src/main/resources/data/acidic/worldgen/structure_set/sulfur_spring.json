@@ -1,0 +1,16 @@
+{
+  "structures": [
+    {
+      "structure": "acidic:sulfur_spring",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 84737261,
+    "spacing": 48,
+    "separation": 20,
+    "frequency_reduction_method": "default",
+    "frequency": 0.06
+  }
+}

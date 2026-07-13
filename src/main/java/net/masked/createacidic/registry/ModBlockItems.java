@@ -22,6 +22,9 @@ public class ModBlockItems {
     public static final RegistryObject<Item> CONDENSER_APPARATUS_ITEM = ITEMS.register("condenser_apparatus",
             () -> new BlockItem(ModBlocks.CONDENSER_APPARATUS.get(), new Item.Properties()));
 
+    public static final RegistryObject<Item> SULFUR = ITEMS.register("sulfur",
+            () -> new BlockItem(ModBlocks.SULFUR.get(), new Item.Properties()));
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

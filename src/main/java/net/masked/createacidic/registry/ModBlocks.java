@@ -23,6 +23,7 @@ public class ModBlocks {
                     .mapColor(MapColor.METAL)
                     .strength(2.0f)
                     .sound(SoundType.METAL)
+                    .requiresCorrectToolForDrops()
                     .noOcclusion()));
 
     public static final RegistryObject<Block> ERLENMEYER_FLASK = BLOCKS.register("erlenmeyer_flask",
@@ -52,6 +53,11 @@ public class ModBlocks {
                             .noCollission()
                             .strength(100.0F)
                             .noLootTable()));
+    public static final RegistryObject<Block> SULFUR = BLOCKS.register("sulfur",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .sound(SoundType.GRAVEL)
+                    .strength(0.6F)
+                    .mapColor(MapColor.COLOR_YELLOW)));
 
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);

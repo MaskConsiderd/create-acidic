@@ -31,6 +31,7 @@ public class ModCreativeTabs {
                         // Filled vials
                         output.accept(ModItems.VIAL_OF_HYDROCHLORIC_ACID.get());
                         output.accept(ModItems.VIAL_OF_SULFURIC_ACID.get());
+                        output.accept(ModItems.VIAL_OF_CONCENTRATED_SULFURIC_ACID.get());
 
                         // Buckets
                         output.accept(ModItems.BUCKET_OF_SULFURIC_ACID.get());
@@ -44,6 +45,7 @@ public class ModCreativeTabs {
                         output.accept(ModBlockItems.BUNSEN_BURNER_ITEM.get());
                         output.accept(ModBlockItems.ERLENMEYER_FLASK_ITEM.get());
                         output.accept(ModBlockItems.CONDENSER_APPARATUS_ITEM.get());
+                        output.accept(ModBlocks.SULFUR.get());
                     })
                     .build());
 

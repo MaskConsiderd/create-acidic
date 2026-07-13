@@ -1,0 +1,15 @@
+{
+  "type": "acidic:bunsen_burner",
+  "heatRequirement": 325,
+  "processingTime": 800,
+  "requiresErlenmeyerFlask": false,
+  "ingredients": [
+    {
+      "item": "acidic:vial_of_sulfuric_acid",
+      "count": 1
+    }
+  ],
+  "results": [
+    { "item": "acidic:vial_of_concentrated_sulfuric_acid", "count": 1 }
+  ]
+}

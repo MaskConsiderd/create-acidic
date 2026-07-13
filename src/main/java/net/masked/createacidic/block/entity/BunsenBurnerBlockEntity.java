@@ -27,7 +27,7 @@ import java.util.List;
 
 public class BunsenBurnerBlockEntity extends BlockEntity implements MenuProvider, IHaveScienceGoggleInformation {
 
-    public static final float MAX_TEMP = 150f;
+    public static final float MAX_TEMP = 500f;
     public static final float TEMP_STEP_PER_CLICK = 25f;
     public static final float RAMP_RATE = 0.5f;
 

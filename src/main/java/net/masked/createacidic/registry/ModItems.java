@@ -41,6 +41,9 @@ public class ModItems {
     public static final RegistryObject<Item> VIAL_OF_SULFURIC_ACID = ITEMS.register("vial_of_sulfuric_acid",
             () -> new Item(new Item.Properties()));
 
+    public static final RegistryObject<Item> VIAL_OF_CONCENTRATED_SULFURIC_ACID = ITEMS.register("vial_of_concentrated_sulfuric_acid",
+            () -> new Item(new Item.Properties()));
+
     // --- Wearables ---
     public static final RegistryObject<Item> SCIENCE_GOGGLES = ITEMS.register("science_goggles",
             () -> new net.masked.createacidic.item.ScienceGogglesItem(new Item.Properties()));

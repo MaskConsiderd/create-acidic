@@ -5,6 +5,7 @@
   "block.acidic.bunsen_burner": "Bunsen Burner",
   "block.acidic.erlenmeyer_flask": "Erlenmeyer Flask",
   "block.acidic.condenser_apparatus": "Condenser Apparatus",
+  "block.acidic.sulfur": "Sulfur",
 
   "block.acidic.sulfuric_acid_block": "Sulfuric Acid",
   "block.acidic.hydrochloric_acid_block": "Hydrochloric Acid",
@@ -16,6 +17,7 @@
   "item.acidic.glass_vial": "Glass Vial",
   "item.acidic.vial_of_hydrochloric_acid": "Vial of Hydrochloric Acid",
   "item.acidic.vial_of_sulfuric_acid": "Vial of Sulfuric Acid",
+  "item.acidic.vial_of_concentrated_sulfuric_acid": "Vial of Concentrated Sulfuric Acid",
   "item.acidic.science_goggles": "Science Goggles",
   "item.acidic.lab_coat": "Lab Coat",
   "item.acidic.bucket_of_sulfuric_acid": "Bucket of Sulfuric Acid",
