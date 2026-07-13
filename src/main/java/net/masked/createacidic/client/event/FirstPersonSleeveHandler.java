@@ -28,7 +28,7 @@ public class FirstPersonSleeveHandler {
                 .getBuffer(RenderType.entityCutoutNoCull(SLEEVE_TEXTURE));
 
         event.getPoseStack().pushPose();
-        event.getPoseStack().translate(0.0, 10.0 / 16.0, 0.0); // tune this value empirically
+        event.getPoseStack().translate(-7.5 / 16.0, 2.0 / 16.0, 0.0 / 16.0); // tune this value empirically
 
         LabCoatSleeveModel.render(event.getPoseStack(), buffer, event.getPackedLight(), event.getArm());
 
